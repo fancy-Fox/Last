@@ -20,19 +20,19 @@ namespace LR1
     {
         public static long QueueTime(int[] customers, int n)
         {
-            int theTime = 0;
+            int t = 0;
             while (customers.Length > 0)
             {
-                int cassazan = n > customers.Length ? customers.Length : n;
-                for (int x = 0; x < cassazan; x++)
+                int busy = n > customers.Length ? customers.Length : n;
+                for (int x = 0; x < busy; x++)
                 {
                     customers[x]--;
                 }
                 customers = Array.FindAll(customers, y => y != 0);
 
-                theTime++;
+                t++;
             }
-            return theTime;
+            return t;
         }
     }
 }
